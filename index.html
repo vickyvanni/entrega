@@ -97,10 +97,21 @@
             </div>
 
         </div>
-        <div id="contador" style="display:none;">
-            <p>Productos seleccionados: <span id="contador-productos">0</span></p>
-            <p>Total: $<span id="total-gasto">0.00</span></p>
-        </div>
+        
+            <div id="contador" style="display:none;">
+                <div style="display: flex;">
+                    <div style="width: 50%; text-align: left;">
+                        <p>Productos seleccionados: <span id="contador-productos">0</span></p>
+                        <p>Total: $<span id="total-gasto">0.00</span></p>
+                    </div>
+                    
+                    <div style="width: 50%;text-align: right; ">
+                        <div style="padding: 10px;"><a href="#" id="boton-pagar" class="button">Pagar</a></div>
+                        <div style="padding: 10px><a href="#" id="boton-cancelar-ordenar" class="button">Cancelar orden</a></div>
+                        
+                    </div>
+                </div>
+            </div>      
     </section>
 
     <!-- Sobre nosotros -->
