@@ -413,9 +413,26 @@ form button {
 /* ============================ */
 
 #contador {
+    text-align: right;
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
+}
+.button {
+    background-color: #d32f2f; /* Rojo oscuro */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #c2185b; /* Color rojo más oscuro al hacer hover */
+}
+.botones{
+    margin-left: auto;
 }
 
 /* ============================ */
