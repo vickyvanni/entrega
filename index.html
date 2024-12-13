@@ -25,9 +25,6 @@
                 <li><a href="#opiniones">Opiniones</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
-            <div class="boton-pedido">
-                <a href="#" id="boton-ordenar" class="btn">Ordenar</a>
-            </div>
         </nav>
     </header>
 
@@ -35,7 +32,6 @@
     <section class="banner">
         <div class="contenido-banner">
             <h2>¡Pide en Crazy Special ahora y obtén un 10% de descuento!</h2>
-            <a href="#" id="boton-ordenar-banner" class="btn">Ordenar</a>
         </div>
         <div class="slider-container">
             <div class="slider">
@@ -51,7 +47,7 @@
 
     <!-- Menú -->
     <section id="menu" class="seccion-menu">
-        <h2>Menú de Hamburguesas</h2>
+        <h1 style="font-size: 40px">Seleccione sus hamburguesas</h1>
         <div class="grid-menu">
 
             <div class="item-menu" data-id="hamburguesa-clasica">
@@ -59,59 +55,55 @@
                 <img src="img/hamburguesaClasica.avif" alt="Imagen de Hamburguesa Clásica">
                 <p>Ingredientes: Carne de res, queso cheddar, lechuga, tomate, mayonesa, ketchup.</p>
                 <p>Precio: $350</p>
+                <p>Cantidad: <input type="number" min="0" value="0" id="cantidad-hamburguesa-clasica" class="cantidad-input"></p>
             </div>
-
+            
             <div class="item-menu" data-id="hamburguesa-con-huevo">
                 <h3>Hamburguesa con Huevo</h3>
                 <img src="img/hamburguesaHuevo.png" alt="Imagen de Hamburguesa con Huevo">
                 <p>Ingredientes: Carne de res, queso, lechuga, tomate, huevo frito, mayonesa.</p>
                 <p>Precio: $400</p>
+                <p>Cantidad: <input type="number" min="0" value="0" id="cantidad-hamburguesa-con-huevo" class="cantidad-input"></p>
             </div>
-
+            
             <div class="item-menu" data-id="hamburguesa-doble-carne">
                 <h3>Hamburguesa Doble Carne</h3>
                 <img src="img/dobleHamburguesa.png" alt="Imagen de Hamburguesa Doble Carne">
                 <p>Ingredientes: Doble carne de res, queso cheddar, cebolla caramelizada, mayonesa.</p>
                 <p>Precio: $450</p>
+                <p>Cantidad: <input type="number" min="0" value="0" id="cantidad-hamburguesa-doble-carne" class="cantidad-input"></p>
             </div>
-
+            
             <div class="item-menu" data-id="hamburguesa-bbq">
                 <h3>Hamburguesa BBQ</h3>
                 <img src="img/Hamburguesa BBQ.webp" alt="Imagen de Hamburguesa BBQ">
                 <p>Ingredientes: Carne de res, bacon, queso cheddar, cebolla morada, salsa barbacoa.</p>
                 <p>Precio: $470</p>
+                <p>Cantidad: <input type="number" min="0" value="0" id="cantidad-hamburguesa-bbq" class="cantidad-input"></p>
             </div>
-
+            
             <div class="item-menu" data-id="hamburguesa-con-bacon">
                 <h3>Hamburguesa con Bacon</h3>
                 <img src="img/Hamburguesa con Bacon.webp" alt="Imagen de Hamburguesa con Bacon">
                 <p>Ingredientes: Carne de res, bacon crujiente, lechuga, tomate, mayonesa, ketchup.</p>
                 <p>Precio: $420</p>
+                <p>Cantidad: <input type="number" min="0" value="0" id="cantidad-hamburguesa-con-bacon" class="cantidad-input"></p>
             </div>
-
+            
             <div class="item-menu" data-id="hamburguesa-vegetariana">
                 <h3>Hamburguesa Vegetariana</h3>
                 <img src="img/Hamburguesa Vegetariana.jpg" alt="Imagen de Hamburguesa Vegetariana">
                 <p>Ingredientes: Hamburguesa de vegetales, lechuga, tomate, cebolla morada, mayonesa vegana.</p>
                 <p>Precio: $390</p>
+                <p>Cantidad: <input type="number" min="0" value="0" id="cantidad-hamburguesa-vegetariana" class="cantidad-input"></p>
             </div>
-
-        </div>
+            
+            <div class="botones-menu">
+                <button id="btn-ordenar" class="btn-ordenar" type="button" onclick="window.location.href='ordenar.html'">Ordenar</button>
+                <button id="btn-cancelar" class="btn-cancelar" type="button" onclick="cancelarOrden()">Cancelar</button>
+            </div>
+        </div> 
         
-            <div id="contador" style="display:none;">
-                <div style="display: flex;">
-                    <div style="width: 50%; text-align: left;">
-                        <p>Productos seleccionados: <span id="contador-productos">0</span></p>
-                        <p>Total: $<span id="total-gasto">0.00</span></p>
-                    </div>
-                    
-                    <div style="width: 50%;text-align: right; ">
-                        <div style="padding: 10px;"><a href="#" id="boton-pagar" class="button">Pagar</a></div>
-                        <div style="padding: 10px><a href="#" id="boton-cancelar-ordenar" class="button">Cancelar orden</a></div>
-                        
-                    </div>
-                </div>
-            </div>      
     </section>
 
     <!-- Sobre nosotros -->
@@ -132,10 +124,36 @@
 
     <!-- Opiniones -->
     <section id="opiniones" class="opiniones">
-        <h2>Opiniones</h2>
+        <h2 style="color: #d0924b;
+        ">Opiniones</h2>
         <div class="carousel-opiniones" id="carousel-opiniones">
             <!-- Opiniones predefinidas -->
-        </div>
+            <div class="opinion">
+                <p>Excelente servicio, siempre me hacen sentir bienvenido. ¡Recomiendo totalmente!</p>
+                <h4>Laura G. (laura@email.com)</h4>
+            </div>
+            <div class="opinion">
+                <p>Un lugar increíble, la comida es deliciosa y el ambiente muy agradable.</p>
+                <h4>Juan P. (juan@email.com)</h4>
+            </div>
+            <div class="opinion">
+                <p>Un lugar perfecto para disfrutar con amigos. Volveré sin duda.</p>
+                <h4>Marta L. (marta@email.com)</h4>
+            </div>
+            <div class="opinion">
+                <p>Siempre salgo contento de aquí. Muy buen trato y atención.</p>
+                <h4>Carlos M. (carlos@email.com)</h4>
+            </div>
+            <div class="opinion">
+                <p>Me encantó el ambiente y la calidad de los productos. ¡Volveré pronto!</p>
+                <h4>Sofía R. (sofia@email.com)</h4>
+            </div>
+            <div class="opinion">
+                <p>¡Todo estuvo perfecto! Me sentí como en casa. Totalmente recomendable.</p>
+                <h4>Andrés T. (andres@email.com)</h4>
+            </div>
+    
+        
     </section>
 
     <!-- Formulario de contacto -->
