@@ -70,62 +70,7 @@ formulario.addEventListener('submit', function (event) {
     formulario.reset();
 });
 
-// Variables de los productos y el contador
-const productos = document.querySelectorAll('.item-menu');  // Todos los productos
-const contadorProductos = document.getElementById('contador-productos');
-const totalGasto = document.getElementById('total-gasto');
-const botonOrdenar = document.getElementById('boton-ordenar');
-const botonOrdenarBanner = document.getElementById('boton-ordenar-banner');
-const contadorSection = document.getElementById('contador');  // Sección de contador
 
-// Inicializamos el contador y el total
-let contador = 0;
-let sumaTotal = 0;
-
-// Precios de los productos
-const precios = {
-    "hamburguesa-clasica": 350,
-    "hamburguesa-con-huevo": 400,
-    "hamburguesa-doble-carne": 450,
-    "hamburguesa-bbq": 470,
-    "hamburguesa-con-bacon": 420,
-    "hamburguesa-vegetariana": 390
-};
-
-// Función para mostrar los productos y permitir su selección
-function habilitarSeleccion() {
-    productos.forEach(producto => {
-        producto.classList.add('seleccionable');  // Hacer los productos seleccionables
-        producto.style.cursor = 'pointer';  // Cambiar el cursor a pointer (mano)
-        
-        // Evento para seleccionar el producto
-        producto.addEventListener('click', function() {
-            // Incrementamos el contador
-            contador++;
-
-            // Sumamos el precio del producto al total
-            const idProducto = producto.getAttribute('data-id');
-            sumaTotal += precios[idProducto];
-
-            // Actualizamos el contador y el total
-            contadorProductos.textContent = contador;
-            totalGasto.textContent = `$${sumaTotal.toFixed(2)}`;
-        });
-    });
-}
-
-// Mostrar la sección de contador y habilitar selección de productos al hacer clic en el botón "Ordenar"
-function mostrarContador() {
-    // Muestra la sección del contador
-    contadorSection.style.display = 'block';
-    
-    // Habilita la selección de productos
-    habilitarSeleccion();
-}
-
-// Asignamos la función a los botones "Ordenar"
-botonOrdenar.addEventListener('click', mostrarContador);
-botonOrdenarBanner.addEventListener('click', mostrarContador);
 
 // Galería de imágenes
 let slideIndex = 0;
@@ -155,3 +100,49 @@ setInterval(() => {
     slideIndex++;
     mostrarImagen(slideIndex);
 }, 5000); // Cambia cada 5 segundos
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Botón para agregar productos al carrito
+    const btnOrdenar = document.getElementById('btn-ordenar');
+    btnOrdenar.addEventListener('click', function () {
+        const pedido = [];
+
+        // Definir los productos
+        const hamburguesas = [
+            { id: 'hamburguesa-clasica', nombre: 'Hamburguesa Clásica', precio: 350 },
+            { id: 'hamburguesa-con-huevo', nombre: 'Hamburguesa con Huevo', precio: 400 },
+            { id: 'hamburguesa-doble-carne', nombre: 'Hamburguesa Doble Carne', precio: 450 },
+            { id: 'hamburguesa-bbq', nombre: 'Hamburguesa BBQ', precio: 470 },
+            { id: 'hamburguesa-con-bacon', nombre: 'Hamburguesa con Bacon', precio: 420 },
+            { id: 'hamburguesa-vegetariana', nombre: 'Hamburguesa Vegetariana', precio: 390 }
+        ];
+
+        // Recoger las cantidades y crear el pedido
+        hamburguesas.forEach(item => {
+            const cantidad = parseInt(document.getElementById(`cantidad-${item.id}`).value) || 0;
+            if (cantidad > 0) {
+                const total = cantidad * item.precio;
+                pedido.push({ nombre: item.nombre, cantidad, precio: item.precio, total });
+            }
+        });
+
+        // Si hay productos en el carrito, guardarlos en localStorage
+        if (pedido.length > 0) {
+            localStorage.setItem('pedido', JSON.stringify(pedido));
+            
+        } else {
+            alert('Por favor, seleccione al menos una hamburguesa.');
+        }
+    });
+
+    // Botón para cancelar la orden
+    const btnCancelar = document.getElementById('btn-cancelar');
+    btnCancelar.addEventListener('click', function () {
+        // Limpiar las cantidades de los inputs
+        const inputsCantidad = document.querySelectorAll('.cantidad-input');
+        inputsCantidad.forEach(input => input.value = 0);
+        
+    });
+});
