@@ -536,10 +536,10 @@ footer {
     }
 
     form button {
-        width: 70%; /* Botones más grandes en pantallas pequeñas */
-        min-width: 120px; /* Ancho mínimo para evitar que sea más chico que el texto */
-        padding: 10px 20px; /* Espaciado interno para que el texto nunca se vea más grande que el botón */
-        font-size: 16px; /* Tamaño de fuente claro y visible */
+        width: 70%; 
+        min-width: 120px; 
+        padding: 10px 20px; 
+        font-size: 16px; 
     }
 
     .beneficios {
@@ -549,18 +549,18 @@ footer {
 
     .carousel-opiniones {
         display: flex; 
-        justify-content: center; /* Centrar horizontalmente los divs de opiniones */
-        flex-wrap: wrap; /* Permitir que se muevan de línea en pantallas pequeñas */
+        justify-content: center; 
+        flex-wrap: wrap; 
     }
 
     .carousel-opiniones .opinion {
-        max-width: 90%; /* Que los divs no ocupen más del 90% del ancho en pantallas pequeñas */
+        max-width: 90%; 
         margin-bottom: 15px;
-        text-align: center; /* Centrar texto de la opinión */
+        text-align: center; 
     }
 
     .formulario-contacto {
-        padding: 10px; /* Reducir márgenes */
+        padding: 10px; 
     }
 
     .formulario-pedido {
@@ -575,11 +575,11 @@ footer {
     }
 
     .banner {
-        height: 400px; /* Altura intermedia */
+        height: 400px;
     }
 
     .grid-menu {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     .item-menu {
@@ -588,14 +588,14 @@ footer {
 
     form input, 
     form textarea {
-        max-width: 80%; /* Ajuste intermedio para tablets */
+        max-width: 80%; 
     }
 
     form button {
-        width: auto; /* Que se ajuste al contenido */
-        min-width: 150px; /* Ancho mínimo para evitar que sea muy pequeño */
-        padding: 10px 20px; /* Espaciado interno para que el texto nunca se vea más grande que el botón */
-        font-size: 16px; /* Tamaño de fuente claro y visible */
+        width: auto; 
+        min-width: 150px; 
+        padding: 10px 20px; 
+        font-size: 16px;
     }
 
     .beneficios {
@@ -605,14 +605,14 @@ footer {
 
     .carousel-opiniones {
         display: flex; 
-        justify-content: center; /* Centrar horizontalmente los divs de opiniones */
-        flex-wrap: wrap; /* Que se reubiquen si no hay espacio suficiente */
+        justify-content: center; 
+        flex-wrap: wrap;
     }
 
     .carousel-opiniones .opinion {
-        max-width: 45%; /* Que los divs de opiniones ocupen menos de la mitad del ancho */
-        margin: 10px; /* Espacio alrededor de las opiniones */
-        text-align: center; /* Centrar el texto de la opinión */
+        max-width: 45%; 
+        margin: 10px; 
+        text-align: center; 
     }
 }
 
@@ -621,27 +621,23 @@ footer {
 /* ============================ */
 
 form button {
-    width: auto; /* Que se ajuste al contenido */
-    min-width: 150px; /* Ancho mínimo para evitar que el botón sea más chico que el texto */
-    padding: 10px 20px; /* Espaciado interno para que el texto no se vea más grande que el botón */
-    font-size: 16px; /* Tamaño de fuente claro y visible */
-    text-align: center; /* Asegurarse de que el texto esté centrado */
+    width: auto; 
+    min-width: 150px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    text-align: center; 
     cursor: pointer;
 }
 
 .carousel-opiniones {
     display: flex; 
-    justify-content: center; /* Centrar horizontalmente los divs de opiniones */
-    flex-wrap: wrap; /* Permitir que los divs se muevan de línea si no hay espacio */
-    gap: 20px; /* Espacio entre los divs de opiniones */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; 
 }
 
 .carousel-opiniones .opinion {
-    max-width: 30%; /* Limitar el tamaño de cada div de opinión */
-    margin: 10px; /* Espacio alrededor de cada div */
-    text-align: center; /* Centrar texto dentro del div */
+    max-width: 30%;
+    margin: 10px;
+    text-align: center; 
 }
-
-
-
-
