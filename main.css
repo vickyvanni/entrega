@@ -215,7 +215,6 @@ button:hover {
     background-color: #f0a754;
     position: relative;
     margin: 0 auto;
-    
 }
 
 .grid-menu {
@@ -227,33 +226,43 @@ button:hover {
     width: 80%;
     text-align: center;
     margin-left:10%;
-    margin-right:10% ;
+    margin-right:10%;
 }
 
 .item-menu {
     text-align: center;
     border: 1px solid #ddd;
     padding: 10px;
-    background-color: #f3f3f3; 
+    background-color: #f3f3f3;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 0 auto;
     display: flex;
-    flex-direction: column; 
-    justify-content: space-between; 
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden; /* Evitar desbordes */
+    position: relative;
 }
 
+/* Ajuste al tamaño al hacer hover */
+.item-menu:hover {
+    transform: scale(1.05); /* Escala menor para evitar desbordes */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+/* Asegurar que la imagen también no se desborde */
 .item-menu img {
     width: 100%;
     height: auto;
     border-radius: 5px;
+    object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
 }
 
 .item-menu h3 {
     font-size: 1.5rem;
-    color: #ff9800; 
+    color: #ff9800;
     margin-top: 10px;
 }
 
@@ -266,27 +275,21 @@ button:hover {
 .item-menu p:last-child {
     font-weight: bold;
     margin-top: auto;
-    
 }
 
 .item-menu p:nth-last-child(2) {
     font-weight: bold;
-   color: #d32f2f; 
+    color: #d32f2f;
 }
 
-.item-menu:hover {
-    transform: scale(1.1); 
-}
-
-/* Estilos para los botones */
 .botones-menu {
     display: flex;
     justify-content: center;
     gap: 20px;
-    position: absolute; 
-    bottom: 20px; 
+    position: absolute;
+    bottom: 20px;
     left: 50%;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
     margin-top: 40px;
 }
 
@@ -298,13 +301,14 @@ button:hover {
     border-radius: 5px;
     background-color: #ff5900;
     color: white;
-    width: 150px; 
+    width: 150px;
     text-align: center;
 }
 
 .botones-menu button:hover {
     background-color: #ff5900b8;
 }
+
 
 
 /* ============================ */
@@ -337,18 +341,55 @@ button:hover {
 }
 
 .carousel-opiniones {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 10px; 
 }
 
 .opinion {
     color: #f0a754;
-    text-align: center;
-    border: 1px solid #ddd;
-    padding: 10px;
-    width: 200px;
+    text-align: center; 
+    border: 1px solid #ddd; 
+    padding: 10px; 
+    width: 200px; 
+    box-sizing: border-box; 
+    overflow-wrap: break-word; 
+    word-break: break-word; 
+    border-radius: 8px; 
+    background-color: #fff; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    max-height: 300px; 
+    overflow: hidden; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
 }
+
+.opinion p {
+    margin: 10px 0; 
+    font-size: 16px; 
+    line-height: 1.5; 
+}
+
+.opinion button {
+    background-color: #f0a754; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px; 
+    text-align: center; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    line-height: 1; 
+    box-sizing: border-box; 
+    transition: background-color 0.3s ease;
+}
+
+.opinion button:hover {
+    background-color: #d48842; 
+}
+
 
 /* ============================ */
 /*       FORMULARIO CONTACTO    */
@@ -450,3 +491,157 @@ footer {
     color: white;
     padding: 10px 0;
 }
+
+/* ============================ */
+/*        ESTILOS RESPONSIVE    */
+/* ============================ */
+
+/* Para pantallas pequeñas (teléfonos) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .banner {
+        height: 300px; /* Reducir altura en móviles */
+    }
+
+    .contenido-banner h2 {
+        font-size: 24px; /* Texto más pequeño */
+    }
+
+    .grid-menu {
+        grid-template-columns: 1fr; /* Una columna en teléfonos */
+        gap: 15px;
+    }
+
+    .item-menu {
+        flex-direction: column; /* Mejor disposición en móviles */
+    }
+
+    .botones-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    form input, 
+    form textarea {
+        max-width: 90%; /* Ocupa casi todo el ancho disponible */
+    }
+
+    form button {
+        width: 70%; /* Botones más grandes en pantallas pequeñas */
+        min-width: 120px; /* Ancho mínimo para evitar que sea más chico que el texto */
+        padding: 10px 20px; /* Espaciado interno para que el texto nunca se vea más grande que el botón */
+        font-size: 16px; /* Tamaño de fuente claro y visible */
+    }
+
+    .beneficios {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carousel-opiniones {
+        display: flex; 
+        justify-content: center; /* Centrar horizontalmente los divs de opiniones */
+        flex-wrap: wrap; /* Permitir que se muevan de línea en pantallas pequeñas */
+    }
+
+    .carousel-opiniones .opinion {
+        max-width: 90%; /* Que los divs no ocupen más del 90% del ancho en pantallas pequeñas */
+        margin-bottom: 15px;
+        text-align: center; /* Centrar texto de la opinión */
+    }
+
+    .formulario-contacto {
+        padding: 10px; /* Reducir márgenes */
+    }
+
+    .formulario-pedido {
+        padding: 10px;
+    }
+}
+
+/* Para tablets y pantallas medianas */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .banner {
+        height: 400px; /* Altura intermedia */
+    }
+
+    .grid-menu {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    }
+
+    .item-menu {
+        margin: 0 auto;
+    }
+
+    form input, 
+    form textarea {
+        max-width: 80%; /* Ajuste intermedio para tablets */
+    }
+
+    form button {
+        width: auto; /* Que se ajuste al contenido */
+        min-width: 150px; /* Ancho mínimo para evitar que sea muy pequeño */
+        padding: 10px 20px; /* Espaciado interno para que el texto nunca se vea más grande que el botón */
+        font-size: 16px; /* Tamaño de fuente claro y visible */
+    }
+
+    .beneficios {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .carousel-opiniones {
+        display: flex; 
+        justify-content: center; /* Centrar horizontalmente los divs de opiniones */
+        flex-wrap: wrap; /* Que se reubiquen si no hay espacio suficiente */
+    }
+
+    .carousel-opiniones .opinion {
+        max-width: 45%; /* Que los divs de opiniones ocupen menos de la mitad del ancho */
+        margin: 10px; /* Espacio alrededor de las opiniones */
+        text-align: center; /* Centrar el texto de la opinión */
+    }
+}
+
+/* ============================ */
+/*       ESTILOS GENERALES      */
+/* ============================ */
+
+form button {
+    width: auto; /* Que se ajuste al contenido */
+    min-width: 150px; /* Ancho mínimo para evitar que el botón sea más chico que el texto */
+    padding: 10px 20px; /* Espaciado interno para que el texto no se vea más grande que el botón */
+    font-size: 16px; /* Tamaño de fuente claro y visible */
+    text-align: center; /* Asegurarse de que el texto esté centrado */
+    cursor: pointer;
+}
+
+.carousel-opiniones {
+    display: flex; 
+    justify-content: center; /* Centrar horizontalmente los divs de opiniones */
+    flex-wrap: wrap; /* Permitir que los divs se muevan de línea si no hay espacio */
+    gap: 20px; /* Espacio entre los divs de opiniones */
+}
+
+.carousel-opiniones .opinion {
+    max-width: 30%; /* Limitar el tamaño de cada div de opinión */
+    margin: 10px; /* Espacio alrededor de cada div */
+    text-align: center; /* Centrar texto dentro del div */
+}
+
+
+
+
